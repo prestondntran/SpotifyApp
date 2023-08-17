@@ -1,0 +1,44 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block title %}
+  Track Recommendations
+{% endblock %}
+
+
+{% block content %}
+    <button onclick="location.href='/'" type="button" class="button" margin-left="50px">
+      Back</button>
+    <h1><center>Track Recommendations</center></h1>
+    <form action="{% url 'searchtrack' %}" method="POST" autocomplete="off">
+      <center>
+        <input type="search" placeholder="Search" name="searchQuery">
+        <div><button type="submit">Enter</button></div>
+      </center>
+    </form>
+    {% if query %}
+      <h3><center>Select a track below to receive recommendations.</center></h3>
+      {% for track, artist, trackArt, index in searchResults %}
+        <a href="{% url 'recresults' %}?name={{track}}&index={{index}}&searchType=track" 
+          class="flex-parent" onmouseover="this.style.backgroundColor='#565656'" 
+          onmouseout="this.style.backgroundColor=''" 
+          style="padding-left:500px;padding-top:10px;padding-bottom:10px;text-decoration:none;">
+          <img src="{{ trackArt }}", width="75" height="75">
+          <p style="color:white; font-family:'Montserrat',sans-serif;">&nbsp&nbsp&nbsp{{ track }} by&nbsp</p>
+          <p style="color:white; font-family:'Montserrat',sans-serif;">{{ artist }}</p>
+        </a>
+      {% endfor %}
+      </div>
+    {% endif %}
+    {% if name %}
+      <h3><center>Recommendations based on "{{name}}"</center></h3>
+      {% for track, artist, trackArt in recResults %}
+        <div class="flex-parent" style="padding-left:500px;padding-top:10px;padding-bottom:10px;">
+          <img src="{{ trackArt }}", width="75" height="75">
+          <p style="color:white; font-family:'Montserrat',sans-serif;">&nbsp&nbsp&nbsp{{ track }} by&nbsp</p>
+          <p style="color:white; font-family:'Montserrat',sans-serif;">{{ artist }}</p>
+        </div>
+      {% endfor %}
+      </div>
+    {% endif %}
+  {% endblock %}

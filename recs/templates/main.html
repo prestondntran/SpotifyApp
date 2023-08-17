@@ -1,0 +1,26 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block title %}
+  Spotify Recommendation Engine
+{% endblock %}
+
+{% block content %}
+  <h1><center>Spotify Recommendation Engine</center></h1>
+  <h3><center>Get song recommendations based on one of the following categories:</center></h3>
+  <div class="flex-parent jc-center">
+    <img src="{% static 'spotifyartist.png' %}" width="320" height="260" class="margin-right">
+    <img src="{% static 'spotifytrack.png' %}" width="270" height="270">
+    <img src="{% static 'spotifygenre.png' %}" width="320" height="260" class="margin-left">
+  </div>
+  <div class="flex-parent jc-center">
+    <button onclick="location.href='artistrec/'" type="button" class="button margin-right">
+      Rec by Artist</button>
+
+    <button onclick="location.href='trackrec/'" type="button" class="button">
+      Rec by Track</button>
+
+    <button onclick="location.href='genrerec/'" type="button" class="button margin-left">
+      Rec by Genre</button>
+  </div>
+{% endblock %}

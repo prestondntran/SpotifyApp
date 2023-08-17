@@ -1,0 +1,1 @@
+web: gunicorn spotifyrec.wsgi --log-file -
