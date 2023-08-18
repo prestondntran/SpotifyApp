@@ -91,6 +91,7 @@ def search(name, searchType):
 # gets song recommendations based on specified parameters
 def getRecs(name, index, searchType):
     #getToken()
+    initSpotify()
     recs = []
 
     # get recommendations based on search type
