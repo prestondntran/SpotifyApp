@@ -5,21 +5,19 @@ from spotipy.oauth2 import SpotifyClientCredentials
 # activate virtual environment
 # source /Users/prestontran/Desktop/CSProjects/SpotifyApp/venv/bin/activate
 
-# initializes spotify
+# authorizes access to spotify library
 def authorize():
     global cid, secret, spotify, accessToken
     cid = "ae328a2376be443b8900255a982bdfa4"
     secret = "ad93d72f6c484783aaf8f27a39646b4b"
     spotify = spotipy.Spotify(client_credentials_manager = SpotifyClientCredentials(client_id = cid, client_secret = secret))
-
-    accessToken = None
     tokenUrl = "https://accounts.spotify.com/api/token"
 
     data = f"grant_type=client_credentials&client_id={cid}&client_secret={secret}"
     headers = {"Content-Type" : "application/x-www-form-urlencoded"}
     response = requests.post(tokenUrl, data = data, headers = headers)
 
-    # gets new token and time until expiration
+    # gets new token
     data = response.json()
     token = data["access_token"]
     accessToken = token
