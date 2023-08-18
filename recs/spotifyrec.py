@@ -18,6 +18,8 @@ def initSpotify():
     tokenExpire = datetime.datetime.now()
     tokenUrl = "https://accounts.spotify.com/api/token"
 
+    authorize()
+
 # request an access token if token has expired
 def authorize():
     global accessToken, tokenExpire
