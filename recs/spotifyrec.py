@@ -38,6 +38,7 @@ def authorize():
 
 # checks if token has expired and requests if necessary
 def getToken():
+    global accessToken
     token = accessToken
     expires = tokenExpire
     now = datetime.datetime.now()
