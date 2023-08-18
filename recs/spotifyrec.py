@@ -60,6 +60,7 @@ def getTrackId(name, index):
 # search for tracks based on query
 def search(name, searchType):
     #getToken()
+    initSpotify()
     response = spotify.search(name, 10, 0, searchType, None)
     allTracks = []
     if (searchType == "track"):
