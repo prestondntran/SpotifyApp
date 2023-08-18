@@ -3,7 +3,6 @@ from django.template import loader
 import recs.spotifyrec as spotifyrec
 
 def main(request):
-  spotifyrec.initSpotify()
   template = loader.get_template('main.html')
   return HttpResponse(template.render())
 
