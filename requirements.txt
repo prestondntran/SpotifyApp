@@ -1,8 +1,10 @@
+asgiref==3.7.2
 certifi==2023.5.7
 charset-normalizer==3.2.0
 contourpy==1.1.0
 cycler==0.11.0
 distlib==0.3.6
+Django==4.2.4
 filelock==3.12.2
 fonttools==4.40.0
 gunicorn==21.2.0
@@ -19,6 +21,7 @@ redis==4.6.0
 requests==2.31.0
 six==1.16.0
 spotipy==2.23.0
+sqlparse==0.4.4
 urllib3==2.0.3
 virtualenv==20.24.0
 webcolors==1.13
