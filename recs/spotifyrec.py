@@ -38,14 +38,12 @@ def authorize():
 
 # checks if token has expired and requests if necessary
 def getToken():
-    global accessToken
-    token = accessToken
-    expires = tokenExpire
+    global accessToken, tokenExpire
     now = datetime.datetime.now()
-    if expires < now or token == None:
+    if tokenExpire < now or accessToken == None:
         authorize()
         return getToken()
-    return token
+    return accessToken
 
 # gets artist ID given name
 def getArtistId(name, index):
