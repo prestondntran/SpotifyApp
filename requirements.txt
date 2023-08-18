@@ -26,3 +26,4 @@ sqlparse==0.4.4
 urllib3==2.0.3
 virtualenv==20.24.0
 webcolors==1.13
+whitenoise==6.5.0
