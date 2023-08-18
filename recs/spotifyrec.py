@@ -47,19 +47,19 @@ def getToken():
 
 # gets artist ID given name
 def getArtistId(name, index):
-    getToken()
+    #getToken()
     response = spotify.search(name, 10, 0, "artist", None)
     return response["artists"]["items"][int(index)]["id"]
 
 # gets track ID given name
 def getTrackId(name, index):
-    getToken()
+    #getToken()
     response = spotify.search(name, 10, 0, "track", None)
     return response["tracks"]["items"][int(index)]["id"]
 
 # search for tracks based on query
 def search(name, searchType):
-    getToken()
+    #getToken()
     response = spotify.search(name, 10, 0, searchType, None)
     allTracks = []
     if (searchType == "track"):
@@ -90,7 +90,7 @@ def search(name, searchType):
 
 # gets song recommendations based on specified parameters
 def getRecs(name, index, searchType):
-    getToken()
+    #getToken()
     recs = []
 
     # get recommendations based on search type
