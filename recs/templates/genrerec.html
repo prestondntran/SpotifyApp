@@ -23,7 +23,7 @@
     {% if name %}
       <h3><center>Recommendations based on "{{name}}"</center></h3>
       {% for track, artist, trackArt in recResults %}
-        <div class="flex-parent" style="justify-content:center;padding-top:10px;padding-bottom:10px;">
+        <div class="flex-parent" style="padding-left:35%;padding-top:10px;padding-bottom:10px;">
           <img src="{{ trackArt }}", width="75" height="75">
           <p style="color:white; font-family:'Montserrat',sans-serif;">&nbsp&nbsp&nbsp{{ track }} by&nbsp</p>
           <p style="color:white; font-family:'Montserrat',sans-serif;">{{ artist }}</p>
